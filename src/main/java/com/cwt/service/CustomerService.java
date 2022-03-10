@@ -19,5 +19,5 @@ public interface CustomerService {
 	
 	public Customer updatePartially(Integer custId, Map<String, String> fields);
 	
-	//public Customer addOrderToCustomer(Integer custId, Integer orderId);
+	public Customer addOrderToCustomer(Integer custId, Integer orderId);
 }

@@ -96,18 +96,18 @@ public class CustomerServiceImpl implements CustomerService {
 		return customer;
 	}
 
-//	@Override
-//	@Transactional
-//	public Customer addOrderToCustomer(Integer custId, Integer orderId) {
-//		Customer customer = findCustomerById(custId);
-//        Order order = orderService.findOrderById(orderId);
-//        if(Objects.nonNull(order.getCustomer())){
-//            throw new RuntimeException("Order has been assigned to another customer");
-//        }
-//        customer.addItem(order);
-//        order.setCustomer(customer);
-//        return customer;
-//	}
+	@Override
+	@Transactional
+	public Customer addOrderToCustomer(Integer custId, Integer orderId) {
+		Customer customer = findCustomerById(custId);
+        Order order = orderService.findOrderById(orderId);
+        if(Objects.nonNull(order.getCustomer())){
+            throw new RuntimeException("Order has been assigned to another customer");
+        }
+        customer.addItem(order);
+        order.setCustomer(customer);
+        return customer;
+	}
 	
 	
 }

@@ -92,40 +92,11 @@ public class CustomerController {
 		return new ResponseEntity<>(customer, HttpStatus.ACCEPTED);
 	}
 	
-//	@PostMapping(value = "{custId}/order/{orderId}/add")
-//    public ResponseEntity<CustomerDto> addItemToCart(@PathVariable final Integer custId,
-//                                                 @PathVariable final Integer orderId){
-//		Customer customer = customerService.addOrderToCustomer(custId, orderId);
-//        return new ResponseEntity<>(CustomerDto.from(customer), HttpStatus.OK);
-//    }
+	@PostMapping(value = "{custId}/order/{orderId}/add")
+    public ResponseEntity<CustomerDto> addItemToCart(@PathVariable final Integer custId,
+                                                 @PathVariable final Integer orderId){
+		Customer customer = customerService.addOrderToCustomer(custId, orderId);
+        return new ResponseEntity<>(CustomerDto.from(customer), HttpStatus.OK);
+    }
 	
-//	@GetMapping("/{custId}")
-//	public Customer getCustomer(@PathVariable Integer custId) {
-//		
-//		try {
-//			return customerService.findCustomerById(custId);
-//		}catch(NoSuchElementException ex) {
-//			throw new CustomerNotFoundException(custId);
-//		}
-//		
-//	}
-	
-//	@RequestMapping(value = "update/{custId}", method = RequestMethod.PUT)
-//	public ResponseEntity<Integer> update(@Valid @PathVariable Integer custId, @RequestBody Customer customer){
-//		
-//		customerService.updateCustomerRecord(custId, customer);
-//		return new ResponseEntity<Integer>(custId, HttpStatus.ACCEPTED);
-//	}
-	
-//	@RequestMapping(value = "/delete/{custId}", method = RequestMethod.DELETE)
-//	public ResponseEntity<Integer> delete(@PathVariable Integer custId){
-//		
-//		try {
-//			customerService.deleteCustomerRecord(custId);
-//		}catch(EmptyResultDataAccessException ex) {
-//			throw new CustomerNotFoundException(custId);
-//		}
-//		
-//		return new ResponseEntity<Integer>(custId, HttpStatus.ACCEPTED);
-//	}
 }

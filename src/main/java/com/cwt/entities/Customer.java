@@ -58,37 +58,37 @@ public class Customer {
 	@NotBlank(message = "Location Should Not Be Blank")
 	private String location;
 	
-//	@OneToMany(
-//            cascade = CascadeType.MERGE,
-//            fetch = FetchType.LAZY
-//    )
-//    @JoinColumn(name = "customer_cust_id")
-//	@JsonManagedReference
-//	private List<Order> orderList = new ArrayList();
-//	
-//	public void addItem(Order order){
-//		orderList.add(order);
-//    }
+	@OneToMany(
+            cascade = CascadeType.MERGE,
+            fetch = FetchType.LAZY
+    )
+    @JoinColumn(name = "customer_cust_id")
+	@JsonManagedReference
+	private List<Order> orderList = new ArrayList();
+	
+	public void addItem(Order order){
+		orderList.add(order);
+    }
 //
 ////    public void removeItem(Order order){
 ////    	orderList.remove(order);
 ////    }
 //
-//    public static Customer from(CustomerDto customerDto){
-//        Customer customer = new Customer();
-//        customer.setFirstName(customerDto.getFirstName());
-//        customer.setLastName(customerDto.getFirstName());
-//        customer.setEmail(customerDto.getEmail());
-//        customer.setLocation(customerDto.getLocation());
-//    
-//        return customer;
-//    }
-//
-//	public Customer(Integer i, String string, String string2, String string3, String string4) {
-//		this.custId = i;
-//		this.firstName = string;
-//		this.lastName = string2;
-//		this.email = string3;
-//		this.location = string4;
-//	}
+    public static Customer from(CustomerDto customerDto){
+        Customer customer = new Customer();
+        customer.setFirstName(customerDto.getFirstName());
+        customer.setLastName(customerDto.getFirstName());
+        customer.setEmail(customerDto.getEmail());
+        customer.setLocation(customerDto.getLocation());
+    
+        return customer;
+    }
+
+	public Customer(Integer i, String string, String string2, String string3, String string4) {
+		this.custId = i;
+		this.firstName = string;
+		this.lastName = string2;
+		this.email = string3;
+		this.location = string4;
+	}
 }

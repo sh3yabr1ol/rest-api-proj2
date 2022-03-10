@@ -31,8 +31,8 @@ public class Order {
 	
 	private int quantity;
 	
-//	@ManyToOne
-//	@JsonBackReference
-//	private Customer customer;
+	@ManyToOne
+	@JsonBackReference
+	private Customer customer;
 	
 }

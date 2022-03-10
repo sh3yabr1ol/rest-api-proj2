@@ -145,8 +145,6 @@ public class CustomerControllerTests {
             		.andExpect(status().isBadRequest());
         }
         
-        
-        
         @Test
         @DisplayName("Test for First Name Size Validation")
         void createCustomer_failFirstName() throws Exception {

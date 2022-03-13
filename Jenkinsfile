@@ -21,7 +21,7 @@ pipeline {
                 agent any
                     steps {
                       withSonarQubeEnv('sonarqube') {
-                        bat 'mvn clean package sonar:sonar -D sonar.login=admin -D sonar.password=Shey05121998! -D sonar.projectKey=sonarqubetest -D sonar.sources=src/main/java -D sonar.java.binaries=target/classes -D sonar.host.url=http://localhost:9000'
+                        bat 'mvn clean package sonar:sonar -D sonar.login=admin -D sonar.password=Shey05121998! -D sonar.projectKey=sonarqubetest -D sonar.sources=src/main/java -D sonar.java.binaries=target/classes -D sonar.tests=src/test -D sonar.java.test.binaries=target/test-classes -D sonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml -D sonar.host.url=http://localhost:9000'
                       }
                     }
             }

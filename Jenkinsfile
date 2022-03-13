@@ -3,6 +3,7 @@ pipeline {
         tools {
             maven 'Maven_3.8.4'
             jdk 'JDK_17'
+            
         }
         stages {
             stage ('Compile Stage') {
@@ -14,11 +15,15 @@ pipeline {
                 steps {
                         bat'mvn test'
                 }
-                post {
-                    always { 
-                        junit 'test-results.xml'   
-                    }   
-                 }
+            }
+            
+            stage ('Sonarqube Analysis') {
+                agent any
+                    steps {
+                      withSonarQubeEnv('sonarqube') {
+                        bat 'mvn clean package sonar:sonar -D sonar.login=admin -D sonar.password=Shey05121998! -D sonar.projectKey=sonarqubetest -D sonar.sources=src/main/java -D sonar.java.binaries=target/classes -D sonar.tests=src/test -D sonar.java.test.binaries=target/test-classes -D sonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml -D sonar.host.url=http://localhost:9000'
+                      }
+                    }
             }
         }
 }

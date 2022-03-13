@@ -22,6 +22,12 @@ pipeline {
                     steps {
                       withSonarQubeEnv('sonarqube') {
                         bat 'mvn clean package sonar:sonar'
+                        -D sonar.login='admin' 
+                        -D sonar.password='Shey05121998!' 
+                        -D sonar.projectKey='sonarqubetest'
+                        -D sonar.sources='src/main/java'
+                        -D sonar.java.binaries='target/classes'
+                        -D sonar.host.url='http://localhost:9000'
                       }
                     }
             }

@@ -1,10 +1,26 @@
 pipeline {
-    agent { any { image 'maven:3.8.4-openjdk-11-slim' } }
-    stages {
-        stage('build') {
-            steps {
-                bat 'mvn --version'
+    agent any
+        stages {
+            stage ('Compile Stage') {
+                steps {
+                    withMaven(maven : 'apache-maven-3.6.1') {
+                      bat'mvn clean compile'
+                    }
+                }
+            }
+            stage ('Testing Stage') {
+                steps {
+                    withMaven(maven : 'apache-maven-3.6.1') {
+                        bat'mvn test'
+                    }
+                }
+            }
+            stage ('Install Stage') {
+                steps {
+                    withMaven(maven : 'apache-maven-3.6.1') {
+                        bat'mvn install'
+                    }
+                }
             }
         }
-    }
 }

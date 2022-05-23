@@ -26,7 +26,7 @@ public class CustomerDto {
     	customerDto.setLastName(customer.getLastName());
     	customerDto.setEmail(customer.getEmail());
     	customerDto.setLocation(customer.getLocation());
-        
+
         return customerDto;
     }
 }

@@ -26,7 +26,7 @@ public class CustomerDto {
     	customerDto.setLastName(customer.getLastName());
     	customerDto.setEmail(customer.getEmail());
     	customerDto.setLocation(customer.getLocation());
-    	//customerDto.setOrdersDto(customer.getOrderList().stream().map(OrderDto::from).collect(Collectors.toList()));
+        
         return customerDto;
     }
 }

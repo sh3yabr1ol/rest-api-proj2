@@ -35,11 +35,7 @@ public class CustomerController {
 	private ValidatorService validatorService;
 	
 	@GetMapping("/{custId}")
-	public Customer getCustomer(@PathVariable Integer custId) {
-	
-		return customerService.findCustomerById(custId);
-		
-	}
+	public Customer getCustomer(@PathVariable Integer custId) { return customerService.findCustomerById(custId); }
 	
 	@GetMapping("/all")
 	public List<Customer> getAllCustomers(){

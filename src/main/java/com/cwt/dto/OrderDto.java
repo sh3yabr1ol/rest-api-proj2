@@ -19,9 +19,7 @@ public class OrderDto {
         orderDto.setOrderId(order.getOrderId());
         orderDto.setProduct(order.getProduct());
         orderDto.setQuantity(order.getQuantity());
-//        if(Objects.nonNull(order.getCustomer())){
-//        	orderDto.setCustomerDetailDto(CustomerDetailDto.from(order.getCustomer()));
-//        }
+
         return orderDto;
     }
 }

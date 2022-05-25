@@ -69,7 +69,11 @@ public class Customer {
 	public void addItem(Order order){
 		orderList.add(order);
     }
-
+//
+////    public void removeItem(Order order){
+////    	orderList.remove(order);
+////    }
+//
     public static Customer from(CustomerDto customerDto){
         Customer customer = new Customer();
         customer.setFirstName(customerDto.getFirstName());

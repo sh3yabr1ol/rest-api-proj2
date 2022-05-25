@@ -7,7 +7,6 @@ import com.cwt.entities.Customer;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
 public class CustomerNotFoundException extends RuntimeException {
-
 	public CustomerNotFoundException(Integer custId) {
         super("Could not find customer with id " + custId);
     }
